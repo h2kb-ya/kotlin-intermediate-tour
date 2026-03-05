@@ -14,8 +14,6 @@ data class Book(
     val category: ItemCategory = ItemCategory.FICTION
 ) : LibraryItem(bookId, bookTitle, bookYear) {
 
-    override val title: String = bookTitle
-
     override fun getType(): String = "Book"
 
     val readingTime: Int

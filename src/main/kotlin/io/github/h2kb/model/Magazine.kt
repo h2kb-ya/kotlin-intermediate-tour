@@ -13,8 +13,6 @@ data class Magazine(
     val month: String? = null
 ) : LibraryItem(magazineId, magazineTitle, magazineYear) {
 
-    override val title: String = magazineTitle
-
     override fun getType(): String = "Magazine"
 
     val displayIssue: String

@@ -4,7 +4,7 @@ import io.github.h2kb.util.LibraryConfig
 
 open class LibraryItem(
     val id: Int,
-    open val title: String,
+    val title: String,
     val year: Int
 ) {
     val age: Int
