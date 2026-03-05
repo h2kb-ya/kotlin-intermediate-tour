@@ -12,7 +12,7 @@ fun main() {
     println("═".repeat(60))
     println()
 
-    println("┌─ STEP 1: Initializing Repository ───────────-──────┐")
+    println("┌─ STEP 1: Initializing Repository ──────────────────┐")
     val repository = LibraryRepository()
     IdGenerator.reset()
     println("│ Repository created                                 │")
