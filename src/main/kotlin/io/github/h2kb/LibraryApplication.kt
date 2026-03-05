@@ -204,9 +204,7 @@ fun main() {
     )
 
     testCsvLines.forEach { csv ->
-        val result = Book.fromCsvResult(csv)
-
-        when (result) {
+        when (val result = Book.fromCsvResult(csv)) {
             is ParseResult.Success -> {
                 println("│   Success: ${result.item.title}")
             }
