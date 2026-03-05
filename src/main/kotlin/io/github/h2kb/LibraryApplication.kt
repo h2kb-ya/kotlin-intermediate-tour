@@ -66,7 +66,7 @@ fun main() {
 
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ SCENARIO A: Items Grouped by Publication Year ───┐")
+    println("┌─ SCENARIO A: Items Grouped by Publication Year ────┐")
     val yearGroups = repository.groupByYear()
 
     yearGroups.forEach { group ->
@@ -77,6 +77,7 @@ fun main() {
                 is Book -> {
                     val subtitle = item.subtitle ?: "(no subtitle)"
                     println("│      ${item.displayTitle}")
+                    println("│      $subtitle")
                     println("│      Author: ${item.author}")
                     println("│      Age: ${item.age} years")
                     println("│      Reading time: ~${item.readingTime} minutes")
@@ -91,7 +92,7 @@ fun main() {
     }
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ SCENARIO B: Books with Missing Optional Fields ──┐")
+    println("┌─ SCENARIO B: Books with Missing Optional Fields ───┐")
 
     val booksWithoutIsbn = repository.findBooksWithoutIsbn()
     println("│")
@@ -115,7 +116,7 @@ fun main() {
 
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ SCENARIO C: Books Sorted by Publication Year ────┐")
+    println("┌─ SCENARIO C: Books Sorted by Publication Year ─────┐")
     val sortedBooks = repository.getBooks().sortedBy { it.year }
 
     sortedBooks.forEach { book ->
@@ -130,7 +131,7 @@ fun main() {
     }
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ SCENARIO D: Item Count by Type ──────────────────┐")
+    println("┌─ SCENARIO D: Item Count by Type ───────────────────┐")
     val bookCount = repository.getBooks().size
     val magazineCount = repository.getMagazines().size
     val totalCount = repository.size()
@@ -161,7 +162,7 @@ fun main() {
     }
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ VALIDATION: Checking Data Integrity ─────────────┐")
+    println("┌─ VALIDATION: Checking Data Integrity ──────────────┐")
 
     repository.getAllItems().forEach { item ->
         try {
@@ -193,7 +194,7 @@ fun main() {
 
     println("└────────────────────────────────────────────────────┘\n")
 
-    println("┌─ SEALED CLASS Demo: Parsing Results ──────────────┐")
+    println("┌─ SEALED CLASS Demo: Parsing Results ───────────────┐")
 
     val testCsvLines = listOf(
         "100,Test Book,2020,Test Author,200,123-456,Test Subtitle",

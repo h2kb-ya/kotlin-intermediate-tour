@@ -108,7 +108,7 @@ data class Magazine(
                     publisher = publisher,
                     month = month
                 )
-            } catch (e: IllegalArgumentException) {
+            } catch (_: IllegalArgumentException) {
                 null
             }
         }
